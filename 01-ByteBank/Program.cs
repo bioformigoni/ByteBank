@@ -10,13 +10,23 @@ namespace _01_ByteBank
     {
         static void Main(string[] args)
         {
-            new ContaCorrente();
+            // Instância da classe ContaCorrente
+            ContaCorrente contaDaGabriela = new ContaCorrente();
 
 
-            string titular = "Gabriela";
-            int numeroAgencia = 863;
-            int numero = 863146;
-            double saldo = 100;
+            contaDaGab
+                riela.titular = "Gabriela";
+            contaDaGabriela.agencia = 863;
+            contaDaGabriela.numero = 863146;
+            contaDaGabriela.saldo = 100;
+
+            Console.WriteLine(contaDaGabriela.titular);
+            Console.WriteLine("Agencia: " + contaDaGabriela.agencia);
+            Console.WriteLine("Numero: " + contaDaGabriela.numero);
+            Console.WriteLine("Saldo: " + contaDaGabriela.saldo);
+
+            contaDaGabriela.saldo += 200;
+            Console.WriteLine("Saldo: " + contaDaGabriela.saldo);
 
             string titular2 = "Bruno";
             int numeroAgencia2 = 863;
