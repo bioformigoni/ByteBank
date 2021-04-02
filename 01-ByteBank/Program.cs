@@ -14,8 +14,7 @@ namespace _01_ByteBank
             ContaCorrente contaDaGabriela = new ContaCorrente();
 
 
-            contaDaGab
-                riela.titular = "Gabriela";
+            contaDaGabriela.titular = "Gabriela";
             contaDaGabriela.agencia = 863;
             contaDaGabriela.numero = 863146;
             contaDaGabriela.saldo = 100;
