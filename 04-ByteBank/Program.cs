@@ -26,6 +26,15 @@ namespace _04_ByteBank
             contaDoBruno.Depositar(500);
             Console.WriteLine(contaDoBruno.saldo);
 
+            ContaCorrente contaDaGabriela = new ContaCorrente();
+            contaDaGabriela.titular = "Gabriela";
+
+            bool resultadoTransferecia = contaDoBruno.Transferir(200, contaDaGabriela);
+
+            Console.WriteLine(contaDoBruno.saldo);
+            Console.WriteLine(contaDaGabriela.saldo);
+            Console.WriteLine(resultadoTransferecia);
+
             Console.ReadLine();
         }
     }
