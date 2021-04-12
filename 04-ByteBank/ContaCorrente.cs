@@ -4,7 +4,8 @@
     public int agencia;
     public int numero;
     public double saldo = 100;
-    
+
+    // Tem valor de retorno = função
     public bool Sacar(double valor)
     {
         if (this.saldo < valor) // "this" indica uma váriável do escopo da própria classe
@@ -18,4 +19,9 @@
         }
     }
 
+    // Não tem valor de retorno = método
+    public void Depositar(double valor)
+    {
+        this.saldo += valor;
+    }
 }
