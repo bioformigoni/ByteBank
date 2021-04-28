@@ -2,38 +2,40 @@
 {
     public class ContaCorrente
     {
-
-        public Cliente titular;
+        public Cliente Titular { get; set; }
         public int agencia;
         public int numero;
-        private double saldo = 100;
 
-
-        public void DefinirSaldo(double saldo)
+        private double _saldo = 100;
+        public double Saldo // Primeira letra maiúscula é convenção para propriedades
         {
-            if (saldo < 0) 
+            get
             {
-                return;
+                return _saldo; // Underline é convenção para campo privado de apenas uma classe
             }
-            
-            this.saldo = saldo;
-        }
 
-        public double ObterSaldo() 
-        {
-            return saldo;
+            set
+            {
+                // O valor não é passado por argumento e sim na variavel value
+                if (value < 0)
+                {
+                    return;
+                }
+
+                _saldo = value;
+            }
         }
 
         // Tem valor de retorno = função
         public bool Sacar(double valor)
         {
-            if (saldo < valor) // "this" indica uma váriável do escopo da própria classe
+            if (_saldo < valor) // "this" indica uma váriável do escopo da própria classe
             {
                 return false;
             }
             else
             {
-                this.saldo -= valor;
+                this._saldo -= valor;
                 return true;
             }
         }
@@ -41,18 +43,18 @@
         // Não tem valor de retorno = método
         public void Depositar(double valor)
         {
-            saldo += valor;
+            _saldo += valor;
         }
 
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (this.saldo < valor)
+            if (_saldo < valor)
             {
                 return false;
             }
             else
             {
-                this.saldo -= valor;
+                _saldo -= valor;
                 contaDestino.Depositar(valor);
                 return true;
             }
