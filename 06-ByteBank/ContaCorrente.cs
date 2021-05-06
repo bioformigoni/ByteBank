@@ -3,8 +3,8 @@
     public class ContaCorrente
     {
         public Cliente Titular { get; set; }
-        public int agencia;
-        public int numero;
+        public int Agencia { get; set; }
+        public int Numero { get; set; }
 
         private double _saldo = 100;
         public double Saldo // Primeira letra maiúscula é convenção para propriedades
